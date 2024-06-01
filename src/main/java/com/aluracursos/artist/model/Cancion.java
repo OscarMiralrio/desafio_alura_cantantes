@@ -9,7 +9,6 @@ public class Cancion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Integer idAlbum;
     private String titulo;
     private String duracion;
     private String compositor;
@@ -26,14 +25,6 @@ public class Cancion {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Integer getIdAlbum() {
-        return idAlbum;
-    }
-
-    public void setIdAlbum(Integer idAlbum) {
-        this.idAlbum = idAlbum;
     }
 
     public String getTitulo() {
@@ -80,7 +71,6 @@ public class Cancion {
     public String toString() {
         return "Cancion{" +
                 "id=" + id +
-                ", idAlbum=" + idAlbum +
                 ", titulo='" + titulo + '\'' +
                 ", duracion='" + duracion + '\'' +
                 ", compositor='" + compositor + '\'' +
