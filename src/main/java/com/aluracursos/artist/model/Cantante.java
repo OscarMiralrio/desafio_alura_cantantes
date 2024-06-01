@@ -24,6 +24,14 @@ public class Cantante {
 
     public Cantante(){}
 
+    public Cantante(String nombreCompleto, String nombreArtistico, LocalDate fechaDeNacimiento, String lugarDeNacimiento, String nacionalidad) {
+        this.nombreCompleto = nombreCompleto;
+        this.nombreArtistico = nombreArtistico;
+        this.fechaDeNacimiento = fechaDeNacimiento;
+        this.lugarDeNacimiento = lugarDeNacimiento;
+        this.nacionalidad = nacionalidad;
+    }
+
     public Long getId() {
         return id;
     }
@@ -77,7 +85,7 @@ public class Cantante {
     }
 
     public void setAlbums(List<Album> albums) {
-        albums.forEach( a -> a.setCantante(this));
+//        albums.forEach( a -> a.setCantante(this));
         this.albums = albums;
     }
 

@@ -1,6 +1,7 @@
 package com.aluracursos.artist.model;
 
 import jakarta.persistence.*;
+import jakarta.transaction.Transactional;
 
 import java.util.List;
 
@@ -22,6 +23,12 @@ public class Album {
     private List<Cancion> canciones;
 
     public Album() {}
+
+    public Album(String titulo, String discografica, String genero) {
+        this.titulo = titulo;
+        this.discografica = discografica;
+        this.genero = genero;
+    }
 
     public Long getId() {
         return id;
@@ -68,7 +75,6 @@ public class Album {
     }
 
     public void setCanciones(List<Cancion> canciones) {
-        canciones.forEach( c -> c.setAlbum(this));
         this.canciones = canciones;
     }
 
@@ -79,7 +85,7 @@ public class Album {
                 ", titulo='" + titulo + '\'' +
                 ", discografica='" + discografica + '\'' +
                 ", genero='" + genero + '\'' +
-                ", cantante=" + cantante +
+                ", cantante=" + cantante.getNombreCompleto() +
                 ", canciones=" + canciones +
                 '}';
     }

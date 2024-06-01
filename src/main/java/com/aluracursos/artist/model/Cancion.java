@@ -19,6 +19,13 @@ public class Cancion {
 
     public Cancion() {}
 
+    public Cancion(String titulo, String duracion, String compositor, String productor) {
+        this.titulo = titulo;
+        this.duracion = duracion;
+        this.compositor = compositor;
+        this.productor = productor;
+    }
+
     public Long getId() {
         return id;
     }
@@ -75,7 +82,7 @@ public class Cancion {
                 ", duracion='" + duracion + '\'' +
                 ", compositor='" + compositor + '\'' +
                 ", productor='" + productor + '\'' +
-                ", album=" + album +
+                ", album=" + album.getTitulo() +
                 '}';
     }
 }
